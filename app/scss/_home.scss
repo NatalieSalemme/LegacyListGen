@@ -1,0 +1,26 @@
+/* Home Screen
+ * Author: bhuelga
+ * -----------------
+ * Styles elements that are used on multiple pages of the site.
+  */
+
+#header-content {
+	height: 800px;
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 3rem;
+	background-color: $primary-dark;
+
+	& a {
+		color: $primary;
+		text-decoration: none;
+		@include transition($duration);
+		&:hover {
+			color: $primary-light;
+		}
+	}
+}
