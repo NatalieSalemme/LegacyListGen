@@ -1,0 +1,604 @@
+<!-- PMA Creator
+  -- Author: bhuelga
+  -->
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+	  <title>Mid-Quarter PMA Creator | ListGen</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
+
+	  <!-- build:css css/main.min.css -->
+	  <link rel="stylesheet" type="text/css" href="css/navs.css">
+	  <link rel="stylesheet" type="text/css" href="css/plugins/hamburgers.css">
+	  <link rel="stylesheet" type="text/css" href="css/mq-pma-creator.css">
+	  <!-- endbuild -->
+	  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+	  <link rel='stylesheet' type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300, 400,700">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+
+	<body>
+
+		<aside id="nav-menu-container">
+			<aside id="nav-menu-header">
+				<i class="material-icons">home</i>
+			</aside>
+
+			<aside id="nav-menu-hamburger" class="hamburger hamburger--elastic" type="button">
+			  <span class="hamburger-box">
+			    <span class="hamburger-inner"></span>
+			  </span>
+			</aside>
+
+			<aside id="nav-menu">
+				<div class="nav-menu-links signed-in">
+
+					<div class="nav-menu-section">Account</div>
+					<div class="nav-link-container">
+						<i class="material-icons">account_box</i>
+						<a class="my-account" href="./my-account.html">My Account</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">folder</i>
+						<a class="my-office" href="./my-office.html">My Office</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">panorama_wide_angle</i>
+						<a class="my-pmas" href="./my-pmas.html">My PMAs</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">phone_in_talk</i>
+						<a class="my-homeowner-page" href="./my-homeowner-page.html">My Homeowner Page</a>
+					</div>
+
+					<div class="nav-menu-section">Help</div>
+					<div class="nav-link-container">
+						<i class="material-icons">help</i>
+						<a class="help-center" href="./help-center.html">Help Center</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">email</i>
+						<a class="contact-us" href="./contact-us">Contact Us</a>
+					</div>
+
+				</div>
+
+				<div class="nav-menu-links signed-out hidden">
+					<div class="nav-link-container">
+						<i class="material-icons">account_circle</i>
+						<a class="sign-in" href="./sign-in.html">Sign In</a>
+					</div>
+
+					<div class="nav-menu-section">Help</div>
+					<div class="nav-link-container">
+						<i class="material-icons">sentimental_very_satisfied</i>
+						<a class="about-us" href="./about-us.html">About Us</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">email</i>
+						<a class="contact-us" href="./contact-us.html">Contact Us</a>
+					</div>
+				</div>
+
+			</aside> 
+		</aside>
+
+		<main>
+
+			<nav id="top-nav-bar">
+				<div class="nav-column">
+					<div class="nav-logo">
+						<i class="material-icons">home</i>
+						<span>List<strong>Gen</strong></span>
+					</div>
+				</div>
+				<div class="nav-column">
+					<div id="tnl-container">
+						<div id="top-nav-links">	
+							<div class="account-container">
+								<i class="material-icons">account_circle</i>
+								<a class="sign-in" href="./sign-in.html">Username</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+
+			<div id="main-content">
+
+				<nav id="top-bar">
+
+					<div id="pma-mq" class="top-column">
+						<div class="top-title">Mid-Quarter&nbsp;&nbsp;|&nbsp;&nbsp;<span class="insert-current-version"></span> - Page Version</div>
+						<div id="pma">A PRECISION MARKET ANALYSIS</div>
+					</div>
+
+					<div id="top-areas" class="top-column">
+						<div class="insert-current-step top-title"></div>
+						<div class="top-dropdown">
+							<div class="insert-current-area"></div>	
+							<i class="material-icons">arrow_drop_down</i>
+						</div>
+						<div class="top-dropdown-content">
+		                	<!-- POPULATE -->
+		            	</div>
+					</div>
+					
+					<div id="top-steps" class="top-column">
+						<div class="top-title">Steps</div>
+						<div id="steps">
+							<span id="top-step-editor" class="top-step selected">Editor</span>
+							<i class="material-icons">chevron_right</i> 
+							<span id="top-step-mailing" class="top-step">Mailing List</span>
+							<i class="material-icons">chevron_right</i> 
+							<span id="top-step-preview" class="top-step disabled">Final Preview</span>
+						</div>
+					</div>
+				</nav>
+
+				<div id="main-window">
+
+					<div id="edit-banner" class="complete-banner">
+						<strong>Editor Complete!</strong>
+						<div class="complete-message">Click to go to <div class="step-link">Final Preview</div></div>
+						<div class="incomplete-message">Click to review <div class="step-link">Mailing List</div></div>
+					</div>
+
+					<div id="mailing-banner" class="complete-banner">
+						<strong>Mailing List Complete!</strong>
+						<div class="complete-message">Click to go to <div class="step-link">Final Preview</div></div>
+						<div class="incomplete-message">Click to finish <div class="step-link">Editor</div></div>
+					</div>
+					
+					<div id="edit-window" class="sub-window">
+
+						<div id="outside-page" class="spread edit-spread">
+							<!-- EDIT SECTIONS -->
+						</div>
+						
+
+						<div id="inside-page" class="spread edit-spread">
+							<!-- EDIT SECTIONS -->
+						</div>
+
+					</div>
+
+					<!--    MAILING WINDOW    -->
+
+					<div id="mailing-window" class="sub-window">
+						<div id="mailing-list" class="spread">
+							<div id="edit-bar">
+
+								<h2></h2>
+								<h3>Blocked<br>Mailings</h3>
+								<ul>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<span>Agent-Blocked</span>
+									</li>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<span>Homeowner-Blocked</span>
+									</li>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<span>Active Listing</span>
+									</li>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<span>Pending Listing</span>
+									</li>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<span>Real Estate Agent</span>
+									</li>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<span>Returned Mail</span>
+									</li>
+									<li class="block-link">
+										(&nbsp;<strong></strong>&nbsp;) 
+										<strong>Total Blocked</strong>
+									</li>
+								</ul>
+
+							</div>
+							<div id="homeowners">
+								<div id="search-bar">
+									<input class="textInput search" placeholder="Search"/>
+									<button id="clear-search">
+										<i class="material-icons">format_align_center</i> 
+										<span>Show All</span>
+									</button>
+								</div>
+							  	<table>
+							  		<thead>
+		  					  			<th></th>
+							  			<th><button class="sort" data-sort="homeowner-tag">
+						  					<span>Homeowner Tag</span>
+					  						<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+							  			<th><button class="sort" data-sort="blocked">
+						  					<span>Blocked</span>
+					  						<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+						  				<th><button class="sort" data-sort="name">
+						  					<span>Name</span>
+						  					<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+						  				<th><button class="sort" data-sort="mail-address-line-2">
+						  					<span>Mailing Address</span>
+						  					<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+						  				<th><button class="sort" data-sort="site-address">
+						  					<span>Site Address</span>
+						  					<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+						  				<th><button class="sort" data-sort="last-sale-price">
+						  					<span>Last Sale</span>
+						  					<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+						  				<th><button class="sort" data-sort="last-sale-date">
+						  					<span>Last Sale Date</span>
+						  					<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+						  				<th><button class="sort" data-sort="selling-agent">
+						  					<span>Selling Agent</span>
+						  					<i class="material-icons">arrow_drop_down</i>
+						  				</button></th>
+							  		</thead>
+							  		<tbody class="list">
+							  			
+							  		</tbody>
+							  	</table>
+							</div>
+							<div id="price-bar">
+								<h2></h2>
+								<h3>Pricing &<br>Approval</h3>
+								<button id="approve-list">
+									<strong>Approve<br><span class="insert-current-area"></span><br>Mailing List</strong>
+								</button>
+								<div id="area-prices">
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--    PREVIEW WINDOW    -->
+
+					<div id="preview-window" class="sub-window flexbox">
+						<div id="incomplete-preview-message" class="spread">
+							<p>Please mark all sections as complete in the <strong>Editor</strong> and 
+							confirm your <strong>Mailing List</strong> first.</p>
+						</div>
+						<div id="complete-final-preview" class="spread">
+							<div id="attention-grabber-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Attention Grabber</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back To Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="front-graph-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Front Graph</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="front-bar-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Front Bar</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="top-image-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Top Image</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="city-highlights-preview" class="preview-spread">
+								<div class="preview-image highlight-list"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>City Highlights</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="area-highlights-preview" class="preview-spread">
+								<div class="preview-image highlight-list"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Area Highlights</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="call-to-action-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Call To Action</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="inside-bar-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Inside Bar</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="listings-and-sales-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Listings And Sales</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="outside-page-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Outside Page</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<div id="inside-page-preview" class="preview-spread">
+								<div class="preview-image"></div>
+								<div class="preview-section-options">
+									<span class="time-confirmed"></span>
+									<h1>Inside Page</h1>
+									<button class="confirm">Confirm</button>
+									<button class="back-to-edit">Back to Edit</button>
+									<span class="click-to-enlarge">Click section to enlarge.</span>
+								</div>
+							</div>
+							<button id="pricing-summary-btn" class="disabled">
+								Continue
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<nav id="bottom-nav-bar">
+				<div class="nav-column">
+					<div id="copyright">
+						2018-19 © ListGen. All Rights Reserved
+					</div>
+				</div>
+				<div class="nav-column">
+					<div id="bottom-nav-links">
+						<a class="about-us" href="./about-us.html">About&nbsp;Us</a>
+						<a id="terms-of-service" href="./terms-of-service.html">Terms&nbsp;of&nbsp;Service</a>
+						<a id="privacy-policy" href="./privacy-policy.html">Privacy&nbsp;Policy</a>
+					</div>
+				</div>
+			</nav>
+
+		</main>
+
+		<!-- EXTRAS -->
+
+		<div id="choose-tag" class="choose-options">
+			<h4>Choose a Homeowner Tag</h4>
+			<h5 class="ho-tag-choice">Friend</h5>
+			<h5 class="ho-tag-choice">Neighbor</h5>
+			<h5 class="ho-tag-choice">Prospect</h5>
+		</div>
+
+		<div id="choose-reason" class="choose-options">
+			<h4>Choose a Reason</h4>
+			<h5 class="reason">Agent-Blocked</h5>
+			<h5 class="reason">Homeowner-Blocked</h5>
+			<h5 class="reason">Returned Mail</h5>
+		</div>
+
+		<div id="splash-message">
+			<!-- INSERT SPLASH MESSAGE -->
+		</div>
+
+		<div id="splash-alert">
+			<div> <!-- INSERT SPLASH MESSAGE --> </div>
+			<button>DISMISS</button>
+		</div>
+
+		<div id="nav-overlay" class="overlay"></div>
+		<div id="edit-overlay" class="overlay"></div>
+		<div id="mailing-overlay" class="overlay"></div>
+		<div id="modal-overlay" class="overlay"></div>
+		<div id="splash-overlay" class="overlay"></div>
+
+		<div id="edit-modal" class="modal">
+			<div class="modal-header">
+				<h1>Edit Homeowner Name Or Address</h1>
+			</div>
+			<div class="modal-body">
+				<div class="modal-body-container">
+					<div id="editOldContainer" class="modalCol modalColLeft">
+						<h1>Current</h1>
+						<h3>Name: </h3>
+						<div id="editName" class="editOld"></div>
+						<h3>Mailing Address: </h3>
+						<div id="editAddress" class="editOld"></div>
+						<h3>Mailing City: </h3>
+						<div id="editCity" class="editOld"></div>
+						<h3>Mailing State: </h3>
+						<div id="editState" class="editOld"></div>
+						<h3>Mailing Zipcode: </h3>
+						<div id="editZipcode" class="editOld"></div>
+					</div>
+					<div id="editNewContainer" class="modalCol modalColRight">
+						<h1>New</h1>
+						<h3>Name: </h3>
+						<input id="editNameInput" class="textInput" type="text">
+						<h3>Mailing Address: </h3>
+						<input id="editAddressInput" class="textInput" type="text">
+						<h3>Mailing City: </h3>
+						<input id="editCityInput"class="textInput" type="text">
+						<h3>Mailing State: </h3>
+						<input id="editStateInput" class="textInput" type="text">
+						<h3>Mailing Zipcode: </h3>
+						<input id="editZipcodeInput" class="textInput" type="text">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="modalCloseBtn">Cancel</button>
+				<button id="editConfirmBtn">Confirm</button>
+			</div>
+		</div>
+
+		<div id="ps-modal" class="modal">
+			<div class="modal-header">
+				<h1>Write a Note to <span class="psName"></span></h1>
+			</div>
+			<div class="modal-body">
+				<div class="modal-body-container">
+					<div>Dear <span class="psName"></span>,</div>
+					<textarea id="ps" placeholder="Your P.S. will be displayed here on the front page of the PMA."></textarea>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="close-btn">Cancel</button>
+				<button id="ps-save-btn">Save & Close</button>
+			</div>
+		</div>
+
+		<div id="pricing-summary-modal" class="modal">
+			<div class="modal-header">
+				<h1>Current Pricing Summary</h1>
+			</div>
+			<div class="modal-body">
+				<div id="pricing-summary">
+					<!-- INSERT PRICES -->
+				</div>
+				<div class="pricing-summary-total">
+					<!-- INSERT TOTAL PRICE -->
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="next-area-btn">Continue to <span></span></button>
+				<button id="to-final-accept-btn">Continue to Final Confirmation</button>
+			</div>
+		</div>
+
+		<div id="final-confirmation-modal" class="modal">
+			<div class="modal-header">
+				<h1>Final Confirmation For This Mailing</h1>
+			</div>
+			<div class="modal-body">
+				<div id="charge-info-container">
+					<div id="charge-info">
+						<ul> 
+							<li>NO CHANGES TO YOUR MAILING CAN BE MADE PAST THIS POINT.</li>
+							<li>
+								By clicking <strong>Confirm</strong> below, you are authorizing ListGen to charge your credit/debit card ending in <span class="insert-cc"></span> the amount below.
+							</li>
+							<li>A copy of the completed PMA for each of your owned MLS Areas will be mailed to you.</li>
+							<li>
+								Please review out <a href="/terms-of-service.html" target="_blank">Terms of Service</a> and <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> for further details.
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="pricing-summary-total">
+					
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="final-confirm-btn">Accept & Confirm</button>
+			</div>
+		</div>
+
+		<div id="thank-you-modal" class="modal">
+			<div class="modal-header">
+				<h1>Thank You!</h1>
+			</div>
+			<div class="modal-body">
+				<p>
+					Thank you for completing your PMA for this mailing period! <br> We at ListGen appreciate your business and loyalty. <br> Check your email for a confirmation on your submission.
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button class="back-to-home"><a href="#">Back to My Office</a></button>
+			</div>
+		</div>
+
+		<div id="past-clients-modal" class="modal">
+			<div class="modal-header">
+				<h1></h1>
+			</div>
+			<div class="modal-body">
+				<div id="charge-per-area">
+					<!-- Insert each area charge -->
+				</div>
+				<div id="total-charge">
+					<!-- Insert total charge of all mailings -->
+				</div>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+
+		<div id="preview-image">
+			<img class="pi" src="">
+		</div>
+
+	<!-- JQuery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- List.js CDN -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+	<!-- Chart.js CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+	<!-- build:js js/main.min.js -->
+	<script src="js/util.js" defer="defer"></script>
+	<script src="js/nav-controller.js" defer="defer"></script>
+	<script src="js/plugins/html2canvas.min.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/mq-templates.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/util.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/top-bar.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/edit-window.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/mailing-window.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/preview-window.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/main-window.js" defer="defer"></script>
+	<script src="js/mq-pma-creator/mq-pma-creator.js" defer="defer"></script>
+	<!-- endbuild -->
+	</body>
+</html>

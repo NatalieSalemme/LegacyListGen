@@ -1,0 +1,265 @@
+/* Responsive Navs
+ * Author: bhuelga
+ * -----------------
+ * Dictates responsiveness and style of top and bottom nav bars and the navigation menu.
+ */
+
+@import "./util.scss";
+
+/*   Top Nav Bar   */
+#top-nav-bar {
+	height: 80px;
+	width: calc(100% - 100px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border-bottom: solid 2px $offwhite;
+
+	& .nav-column {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		& div { display: inline-block; }
+
+		& .nav-logo {
+			display: flex;
+			align-items: center;
+			margin-left: 20px;
+
+			& span {
+				margin-left: 15px;
+
+				letter-spacing: 4px;
+				white-space: nowrap;
+				@include transition($transition-speed);
+			}
+		}
+
+		& #tnl-container {
+			display: none;
+
+			& #top-nav-links {
+				display: flex;
+				align-items: center;
+
+				& .account-container {
+					display: flex;
+					align-items: center;
+
+					font-weight: bold;
+
+					& .account-pic {
+						height: 20px;
+						width: 20px;
+					}
+
+					& i {
+						margin-right: 5px;
+					}
+				}
+
+				& a {
+					padding: 5px 0;
+					vertical-align: center;
+					font-size: 1.3rem;
+
+					color: $black;
+					border-bottom: 1px solid transparent;
+					text-decoration: none;
+					@include transition($transition-speed);
+
+					&:hover,:focus { 
+						color: $two-blue; 
+						border-bottom: 1px solid $two-blue;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*   Bottom Nav Bar   */
+#bottom-nav-bar {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: center;
+	color: $white;
+	padding: 10px;
+	background: $black;
+
+	& .nav-column {
+		margin: 5px 0;
+
+		& #copyright {
+			text-align: center;
+			font-size: .9rem;
+		}
+
+		& #bottom-nav-links {
+			text-align: center;
+
+			& a {
+				padding: 0 10px;
+
+				color: $white;
+				font-size: 1rem;
+				text-decoration: none;
+				@include transition($transition-speed);
+
+				&:hover,:focus { color: $one-cyan; };
+			}
+		}
+	}
+}
+
+
+/*   Navigation Menu   */
+#nav-menu-container {
+
+	& #nav-menu-header {
+		height: 80px;
+		width: 0;
+		display: flex;
+		align-items: center;
+		position: fixed;
+		z-index: $top;
+		top: 0;
+		right: 0;
+		overflow: hidden;
+
+		color: $black;
+		background-color: $white;
+		@include transition(.5s, ease-out);
+		@include box-shadow(-5px, 0, 200px, black, false, 10px);
+
+		& i {
+			margin-left: 20px;
+			@include scale(2);
+		}
+	}
+
+	& #nav-menu-hamburger {
+		position: fixed;
+		z-index: $absolute;
+		top: 0px;
+		right: 5px;
+		margin: 10px;
+
+		background-color: $white;
+		@include box-shadow(1px, 1px, 14px, black, false, -1px);
+	}
+
+	& #nav-menu {
+		height: calc(100% - 80px);
+		width: 0;
+		position: fixed;
+		z-index: $top;
+		top: 80px;
+		right: 0;
+		overflow: hidden;
+
+		color: $black;
+		background-color: $offwhite;
+		font-size: 1.1rem;
+		@include transition(.5s, ease-out);
+		@include box-shadow(-5px, 0, 200px, black, false, 10px);
+		@include box-shadow(0, 0, 4px, $black, true, 0);
+
+		& .nav-menu-links {
+			width: 500px;
+			padding: 20px;
+			overflow: hidden;
+
+			& .nav-menu-section {
+				width: 50%;
+				padding-bottom: 5px;
+
+				font-weight: bolder;
+				border-bottom: solid 1px $black;
+			}
+
+			& .nav-link-container {
+				display: flex;
+				align-items: center;
+				margin: 15px;
+
+				& a {
+					margin-left: 5px;
+					color: $black;
+					text-decoration: none;
+					@include transition($transition-speed);
+
+					&:hover,:focus {
+						font-weight: bold;
+						color: $two-blue;
+					};
+				}
+
+				& i {
+
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 233px) {
+	#bottom-nav-links *:first-child {
+		border-right: solid 1px $one-cyan;
+	}
+}
+
+@media screen and (min-width: 304px) {
+	.nav-logo  {
+
+		& i { @include scale(2); }
+
+		& span {
+			margin-left: 20px;
+			font-size: 2rem;
+		}
+
+	}
+}
+
+@media screen and (min-width: 356px) {
+	#bottom-nav-links *:nth-child(2) {
+		border-right: solid 1px $one-cyan;
+	}
+}
+
+@media screen and (min-width: 390px) {
+	#nav-menu {
+		font-size: 1.3rem !important;
+	}
+}
+
+@media screen and (min-width: 440px) {
+	.nav-logo span {
+		font-size: 3rem;
+	}
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+	.nav-logo span {
+		font-size: 3rem;
+	}
+
+	#bottom-nav-bar {
+		flex-flow: row nowrap;
+		padding: 10px 20px;
+	}
+
+	.nav-column {
+		flex-flow: row nowrap;
+	}
+
+	#bottom-nav-links a {
+		margin: 0;
+	}
+}

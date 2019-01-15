@@ -10,14 +10,80 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	  <!-- build:css css/main.min.css -->
-	  <link rel="stylesheet" type="text/css" href="css/main.css">
+	  <link rel="stylesheet" type="text/css" href="css/util.css">
+	  <link rel="stylesheet" type="text/css" href="css/navs.css">
+	  <link rel="stylesheet" type="text/css" href="css/plugins/hamburgers.css">
+	  <link rel="stylesheet" type="text/css" href="css/index.css">
 	  <!-- endbuild -->
-
 	  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
 	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 
 	<body>
+
+		<aside id="nav-menu-container">
+			<aside id="nav-menu-header">
+				<i class="material-icons">home</i>
+			</aside>
+
+			<aside id="nav-menu-hamburger" class="hamburger hamburger--elastic" type="button">
+			  <span class="hamburger-box">
+			    <span class="hamburger-inner"></span>
+			  </span>
+			</aside>
+
+			<aside id="nav-menu">
+				<div class="nav-menu-links signed-in">
+
+					<div class="nav-menu-section">Account</div>
+					<div class="nav-link-container">
+						<i class="material-icons">account_box</i>
+						<a class="my-account" href="./my-account.html">My Account</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">folder</i>
+						<a class="my-office" href="./my-office.html">My Office</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">panorama_wide_angle</i>
+						<a class="my-pmas" href="./my-pmas.html">My PMAs</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">phone_in_talk</i>
+						<a class="my-homeowner-page" href="./my-homeowner-page.html">My Homeowner Page</a>
+					</div>
+
+					<div class="nav-menu-section">Help</div>
+					<div class="nav-link-container">
+						<i class="material-icons">help</i>
+						<a class="help-center" href="./help-center.html">Help Center</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">email</i>
+						<a class="contact-us" href="./contact-us">Contact Us</a>
+					</div>
+
+				</div>
+
+				<div class="nav-menu-links signed-out hidden">
+					<div class="nav-link-container">
+						<i class="material-icons">account_circle</i>
+						<a class="sign-in" href="./sign-in.html">Sign In</a>
+					</div>
+
+					<div class="nav-menu-section">Help</div>
+					<div class="nav-link-container">
+						<i class="material-icons">sentimental_very_satisfied</i>
+						<a class="about-us" href="./about-us.html">About Us</a>
+					</div>
+					<div class="nav-link-container">
+						<i class="material-icons">email</i>
+						<a class="contact-us" href="./contact-us.html">Contact Us</a>
+					</div>
+				</div>
+
+			</aside> 
+		</aside>
 
 		<main>
 
@@ -43,7 +109,7 @@
 			<div id="main-content">
 				
 				<section id="header-content">
-					<a href="/pma/midquarter/standard">PMA CREATOR</a>
+					<a href="/mq-pma-creator.html">PMA CREATOR</a>
 					<a href="/my-homeowner-page.html">HOMEOWNER SITE</a>
 				</section>
 			</div>
@@ -68,6 +134,8 @@
 	<!-- JQuery CDN -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<!-- build:js js/main.min.js -->
+	<script src="js/util.js"></script>
+	<script src="js/nav-controller.js"></script>
 	<!-- endbuild -->
 	</body>
 </html>

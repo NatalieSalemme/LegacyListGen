@@ -1,0 +1,1149 @@
+/* My Homeowner Page
+ * Author: bhuelga
+ * -----------------
+ */
+
+@import "./util.scss";
+
+@mixin pdd-title-accent($color) {
+	border-color: $color; 
+	&::after {
+		border-right-color: $color;
+		border-bottom-color: $color;
+	}
+}
+
+#main-content {
+	width: 100%;
+	height: 100%;
+}
+
+#top-bar {
+	width: 100%;
+	height: 70px;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: $low-overlay;
+
+	color: $black;
+	background: white;
+	cursor: pointer;
+	overflow: hidden;
+	@include box-shadow(0, 0, 8px, $black, false, 2px);
+	@include transition($transition-speed ease-in);
+
+	& #top-main {
+		height: 70px;
+		width: 100%;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include transition($transition-speed);
+		@include box-shadow(0, 5px, 2px, $black, false);
+
+		& img { height: 100%; }
+
+		& #welcome {
+			margin-right: 45px;
+			margin-bottom: 5px;
+
+			text-align: center;
+			font-size: 1.7rem;
+			@include transition($transition-speed);
+
+			& .insert-homeowner-names { font-size: 1.5rem;}
+
+			& .ho-market-insight {
+				font-size: 1.2rem;
+				font-weight: 300;
+
+				color: $primary-dark;
+			}
+		}
+	}
+
+	& #top-expanded { 
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+
+		text-align: center;
+		font-size: 1.3rem;
+		color: white;
+		background: $primary-dark;
+		font-weight: 300;
+
+		& .insert-current-date {
+			color: $primary;
+			margin-bottom: 50px;
+			font-weight: 400;
+		}
+
+		& > p { width: 55%; }
+
+		& > div {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			& p { width: 50%; }
+		}
+
+		& ul { 
+			width: 55%; 
+			margin: 0;
+			text-align: left;
+		}
+
+		& .ho-options-list {
+			margin-top: 30px;
+			& .closer {
+				width: 55%;
+				margin-top: 70px;
+				& strong { margin-top: 20px; }
+			}
+		}
+
+		& .insert-agent-name {
+			font-family: 'Courgette';
+			font-size: 1.6rem;
+			font-weight: lighter;
+		}
+
+		& #click-anywhere { 
+			color: $primary-light; 
+			margin-top: 20px;
+			font-size: .8rem;
+		}
+	}
+
+	&.expanded {
+		height: 100%;
+		z-index: $middle;
+		& #top-main {
+			height: 100px;
+			margin: 0;
+			@include box-shadow(0, 2px, 8px, $black, false, 1px);
+		}
+	}
+
+}
+
+#top-bar-overlay { display: initial; }
+
+#main-container {
+	height: 100vh;
+	width: 100%;
+	padding: 80px 0 10px 0;
+
+	display: flex;
+	justify-content: center;
+
+	border-bottom: 1px solid $black;
+	background: darken($primary-dark, 7.5%);
+	@include transition($transition-speed-slow);
+
+	&.expanded { height: 925px; }
+
+	& #channel-menu {
+		width: 20%;
+		height: 100%;
+		position: relative;
+		@include transition($transition-speed-slow);
+
+		&.collapsed { 
+			width: 0; 
+			& * { display: none; }
+		}
+
+		& ul {
+			padding: 5px 10px 5px;
+			margin-top: 30px;
+			width: 15%;
+			// border-bottom: 1px solid $primary;
+			white-space: nowrap;
+
+			& .nav-channel {
+				width: 100%;
+				padding-left: 10px;
+				margin: 10px 0;
+
+				color: white; 
+				font-size: 1.1rem;
+				font-weight: 300;
+				list-style: none;
+				cursor: pointer;
+				@include transition($transition-speed-fast);
+
+				&.active {
+					margin-left: 20px;
+					color: darken($primary-light-highlight, 20%);
+					font-size: 1.4rem;
+					font-weight: 400;
+				}
+
+				&:hover:not(.active) {
+					color: darken($primary-light-highlight, 20%);
+					font-size: 1.2rem;
+					font-weight: 400;
+				}
+			}
+		}
+
+		& .section-nav {
+
+			width: 45%;
+			margin: 30px 0 0 10px;
+			padding: 5px 30px;
+
+			font-family: 'Lato';
+			color: white;
+			background: $primary;
+			border: 1px solid $primary-dark;
+			outline: none;
+			cursor: pointer;
+			@include transition($transition-speed);
+			&:hover,:focus { background: $primary-dark; }
+		}
+	}
+
+	& #tv-container {
+		width: 60%;
+		height: 80%;
+		padding: 10px;
+		position: relative;
+		background: darken($primary-dark, 10%);
+		@include transition($transition-speed-slow);
+
+		& #contract-button {
+			width: 50px;
+			height: 50px;
+			display: none;
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			z-index: 1;
+			color: white;
+			background: $primary;
+			cursor: pointer;
+			border: none;
+			@include transition($transition-speed);
+			&:hover,:focus { background: $primary-dark; }
+		}
+
+		&.expanded #contract-button { 
+			display: initial !important; 
+		}
+
+		&.expandable:not(.expanded) #tv { 
+			cursor: pointer;
+		}
+
+		& #tv {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			@include border-radius(5px);
+
+			& .tv-channel { display: none; }
+			& .carousel-arrow {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				bottom: 275px;
+				z-index: $low;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				font-size: 2.4rem;
+				color: white;
+				background: rgba(102, 102, 102, .7);
+				opacity: 0;
+				cursor: pointer;
+				@include border-radius(50%);
+				@include transition($transition-speed);
+
+				&.carousel-arrow-left { left: 5px; }
+				&.carousel-arrow-right { right: 5px; }
+				&:hover { color: $primary-light-highlight; }
+			}
+
+			/*   CHANNELS   */
+
+			& #collection-channel { 
+				width: 100%;
+				height: 100%;
+
+				& #collection-list {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					background: black;
+					position: relative;
+					overflow-x: auto;
+					overflow-y: hidden;
+					scroll-snap-type: x mandatory;
+					@include transition($transition-speed);
+
+					&::-webkit-scrollbar { display: none; }
+
+					& .collection-item {
+						height: 100%;
+						min-width: 100%;
+						margin-right: 20px;
+						position: relative;
+
+						background-size: cover;
+						background-repeat: no-repeat;
+						background-position: center;
+
+						scroll-snap-align: start;
+
+						& .collection-item-status {
+							position: absolute;
+							top: 5px;
+							left: 5px;
+							font-size: 1rem;
+							font-weight: 700;
+							padding: 10px 20px;
+							background: $black;
+						}
+
+						& .collection-item-status-date {
+							width: 100%;
+							text-align: center;
+							font-size: .8rem;
+						}
+
+						& .item-banner {
+							width: 100%;
+							height: 10%;
+							justify-content: space-between;
+							align-items: center;
+							position: absolute;
+							color: $black;
+							background: rgba(255, 255, 255, .9);
+							@include transition($transition-speed);
+
+							&.info-banner {
+								display: flex;
+								bottom: 20px;
+								padding: 30px 20px;
+
+								& .collection-item-address { font-size: 1.5rem; }
+								& .collection-item-price { font-size: 1.4rem; }
+							}
+
+							&.option-banner {
+								height: 8%;
+								display: none;
+								padding: 10px;
+
+								& .option-buttons {
+									width: 100%;
+									height: 100%;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									overflow: hidden;
+
+									& button {
+										margin: 0 10px;
+										padding: 5px 20px;
+										outline: 0;
+										border: 1px solid $primary;
+										font-size: 1.1rem;
+										font-family: 'Lato';
+										color: $black;
+										background: $primary-light;
+										cursor: pointer;
+										@include transition($transition-speed);
+										&.collection-map-button { margin-left: 50px; }
+										&.collection-video-button { margin-right: 50px; }
+
+										&:hover,:focus { 
+											color: white;
+											background: $primary;
+										}
+
+										&.collection-details-button { padding: 5px 50px; }
+										&.collection-contact-button { margin-left: auto; }
+									} 
+
+								}
+
+								&.expanded { 
+									height: 80%; 
+									& .option-buttons { height: 10%; }
+								}
+							}
+						}
+					}
+				}
+
+				& .paddle {
+					height: 40px;
+					width: 40px;
+					position: absolute;
+					top: calc(50% - 20px);
+					z-index: $low;
+
+					background: rgba(0, 0, 0, .7);
+					cursor: pointer;
+					@include border-radius(50%);
+					@include transition($transition-speed);
+
+					&.hidden { display: none !important; }
+
+					&.right { 
+						right: 5px; 
+						&::after {
+							content: ' ';
+							position: absolute;
+							top: 8px;
+							right: 12px;
+							border-top: 12px solid transparent;
+							border-bottom: 12px solid transparent;
+							border-left: 12px solid white;
+						}
+					}
+
+					&.left { 
+						left: 5px; 
+						&::after {
+							content: ' ';
+							position: absolute;
+							top: 8px;
+							left: 12px;
+							border-top: 12px solid transparent;
+							border-bottom: 12px solid transparent;
+							border-right: 12px solid white;
+						}
+					}
+					&:hover { @include scale(1.2); }
+					&:hover.left::after { border-right-color: $primary; }
+					&:hover.right::after { border-left-color: $primary; }
+				}
+				
+			}
+
+
+			& #pma-channel {
+				width: 100%;
+				height: 100%;
+				display: initial;
+				position: relative;
+
+				& div { 
+					width: 100%;
+					height: 100%;
+					display: none;
+					background: white;
+					&.active { display: initial; }
+
+					& img {
+						width: 100%;
+						height: 100%;
+						background: white;
+					}
+
+					
+				}
+			}
+
+			& #activity-channel {
+			}
+
+			& #search-channel {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: url('../../images/pma-creator/las/2715RiberaRd.jpg') 50% 50% no-repeat;
+				background-size: cover;
+
+				& .property-search-input {
+					padding: 30px 60px 10px 60px;
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					border: 1px solid $black;
+					background: rgba(220, 235, 245, .7);
+					@include border-radius(10px);
+
+					& .ps-row {
+						display: flex;
+						justify-content: space-around;
+
+						& .ps-col {
+							margin: 10px 20px;
+
+							& input { 
+								padding: 5px;
+								font-family: 'Lato';
+								text-align: center;
+							}
+
+							& button {
+								padding: 10px 20px;
+								font-family: 'Lato';
+								border: 1px solid $primary-dark;
+								outline: none;
+								color: white;
+								background: $primary;
+								cursor: pointer;
+								@include transition($transition-speed);
+
+								&:hover,:focus { background: $primary-dark; }
+							}
+						}
+
+						&#advanced-message {
+							font-size: 1rem;
+							font-weight: 500;
+
+							& .ps-col { margin: 0; }
+						}
+					}
+				}
+			}
+
+			& #favorite-channel {
+				display: initial;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: $offwhite;
+				background: url('../../images/pma-creator/las/26314OceanViewAve.jpg') 50% 50% no-repeat;
+				background-size: cover;
+
+				& #favorite-search-input {
+					width: 80%;
+					height: 70%;
+					background: rgba(220, 235, 245, .7);
+					border: 1px solid $black;
+					@include border-radius(10px);
+
+					& #fs-title {
+						padding: 20px 10px;
+						color: white;
+						background: darken(rgba(220, 235, 245, .7), 55%);
+						@include border-radius(10px 10px 0 0);
+
+						& span {
+							font-size: 1.3rem;
+						}
+					}
+
+					& #fs-list {
+						display: flex;
+						flex-flow: column nowrap;
+						align-items: center;
+
+						& .fs-selection {
+							width: 80%;
+							display: flex;
+							align-items: center;
+							margin-top: 10px;
+							padding: 5px 10px;
+							color: white;
+							background: $primary-dark;
+							@include border-radius(10px);
+
+							& span {
+								margin: 0 10px;
+							}
+
+							& button {
+								height: 100%;
+								padding: 5px 8px;
+								margin-left: auto;
+								color: white;
+								background: $primary;
+								border: 1px solid $primary;
+								cursor: pointer;
+								outline: none;
+								@include border-radius(50%);
+								@include transition($transition-speed);
+								&:hover,:focus { color: $black; background: $primary-light; }
+								& i { font-size: 1rem; }
+							}
+						}
+					}
+				}
+			}
+
+			& #email-channel {
+				display: initial;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: $offwhite;
+				background: url('../../images/pma-creator/las/250716thAve.jpg') 50% 50% no-repeat;
+				background-size: cover;
+
+				& #pu-input {
+					width: 80%;
+					height: 70%;
+					background: rgba(220, 235, 245, .7);
+					border: 1px solid $black;
+					@include border-radius(10px);
+
+					& #pu-title {
+						font-size: 1.3rem;
+						padding: 20px 10px;
+						color: white;
+						background: darken(rgba(220, 235, 245, .7), 55%);
+						@include border-radius(10px 10px 0 0);
+					}
+
+					& #pu-message {
+						padding: 85px;
+						font-size: 1.2rem;
+					}
+
+					& button {
+						padding: 10px 20px;
+						font-size: 1rem;
+						font-family: 'Lato';
+						color: white;
+						background: $primary;
+						border: 1px solid $primary-dark;
+						outline: none;
+						cursor: pointer;
+						text-transform: uppercase;
+						@include transition($transition-speed);
+
+						&:hover,:focus {
+							background: $primary-dark;
+						}
+					}
+
+				}
+			}
+
+			& #smart-channel {
+
+			}
+		}
+
+		& #collection-home-photos {
+			height: 25%;
+			width: 150%;
+			margin-top: 10px;
+			margin-left: -25%;
+
+			& img {
+				height: 100%;
+			}
+		}
+
+		&.expanded { 
+			width: 90%; 
+
+			& #tv #collection-channel #collection-list .collection-item {
+				& .info-banner {
+					height: 5%;
+					bottom: calc(10% + 5px);
+					padding: 15px 20px;
+					&.expanded { bottom: calc(80% + 5px); }
+					& .collection-item-address { font-size: 1.5rem; }
+					& .collection-item-price { font-size: 1.4rem; }
+				}
+
+				& .option-banner {
+					display: block;
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	& #agent-info {
+		width: 20%;
+		height: 100%;
+		padding: 40px 0;
+
+		position: relative;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+
+		color: white;
+		white-space: normal;
+
+		@include transition($transition-speed-slow);
+
+		&.collapsed { 
+			width: 0; 
+			& * { display: none; }
+		}
+
+		& > div {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+
+			font-weight: 300;
+
+			& #agent-photo {
+				width: 150px;
+				height: 200px;
+				background: url('') 50% 50% no-repeat;
+				outline: 3px solid $primary-dark;
+			}
+
+			& #agent-name {
+				margin-top: 5px;
+				margin-bottom: 10px;
+				font-weight: 500;
+				font-size: 1.1rem;
+			}
+
+			& #agent-accolades {
+				font-size: .85rem;
+				text-align: center;
+				margin: 25px 0;
+				& i { display: block; }
+			}
+
+			& #social-media {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+
+				& img { 
+					height: 20px; 
+					margin: 0 2.5px;
+					cursor: pointer;
+				}
+			}
+		}
+
+		& button {
+			font-family: 'Lato';
+			color: white;
+			background: $primary;
+			border: 1px solid $primary-dark;
+			outline: none;
+			cursor: pointer;
+			text-transform: uppercase;
+			@include transition($transition-speed);
+			&:hover,:focus { background: $primary-dark; }
+
+			&#about-button { 
+				margin: 10px 0 30px 0;
+				padding: 5px 20px; 
+				font-size: .9rem;
+				font-weight: 300;
+			}
+
+			&#contact-button {
+				padding: 7.5px 35px;
+				font-size: 1.1rem;	
+				border-width: 2px;
+			}
+		}
+
+		& .easter-egg {
+			position: absolute;
+			bottom: 25%;
+
+			font-size: .6rem;
+			color: white;
+			cursor: pointer;
+		}
+
+		& #joke-tv { right: 25px; }
+		& #homewatch-tv { left: 25px; }
+	}
+}
+
+#inventory {
+	width: 100%;
+	padding: 10px 20px;
+	background: $offwhite;
+	@include box-shadow(0, 0, 12px, $gray, true, 2px);
+
+	& #sort-container {
+		height: 120px;
+		width: 90%;
+		text-align: center;
+		color: white;
+		background: $black;
+		font-size: 1.5rem;
+		margin: 10px auto;
+		outline: 3px solid $black;
+
+		& > div { 
+			width: 100%;
+			padding: 10px;
+			background: darken($black, 5%);
+			font-weight: 300; 
+			border-bottom: 1px solid white;
+			text-align: center; 
+			font-size: 1rem; 
+		}
+
+		& .button-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: darken($black, 5%);
+
+			& button {
+				width: 8%;
+				height: 60px;
+				cursor: pointer;
+				border: 1px solid gray;
+				outline: none;
+				font-family: 'Lato';
+				font-size: 1.1rem;
+				color: white;
+				background: lighten($black, 5%);
+				&:hover,:focus,.active {
+					background: $primary;
+				}
+			}
+		}
+		
+	}
+
+	& #no-results {
+		display: none;
+		width: 100%;
+		padding: 250px;
+		text-align: center;
+		color: white;
+		background: darken($black, 5%);
+		font-size: 3rem;
+	}
+
+	& .inventory-selection {
+		width: 100%;
+		display: flex;
+		background: darken($black, 5%);
+
+		& .inventory-photo {
+			width: 30%;
+			margin: 20px 10px 20px 20px;
+			position: relative;
+			background: url('') 50% 50% no-repeat;
+
+			& .status {
+				padding: 10px;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				font-size: .8rem;
+				padding: 7.5px 15px;
+				font-weight: bold;
+				background: $black;
+			}
+
+			& .favorite-star {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				font-size: 2rem;
+				color: yellow;
+				cursor: pointer;
+			}
+		}
+
+		& .inventory-info {
+			width: 35%;
+			margin: 20px;
+			padding-bottom: 7px;
+			color: $light-gray;
+			background: $black;
+			font-size: 1.2rem;
+			position: relative;
+
+			& > * {
+				padding: 0 10px;
+			}
+
+			& .inv-line-1 {
+				width: 100%;
+				padding: 10px 10px 0 10px;
+				display: flex;
+				justify-content: center;
+				font-size: 1.4rem;
+				background: lighten($black, 5%);
+
+				& .inv-status {
+					color: $listing; 
+					font-weight: bold;
+					font-size: 1.5rem;
+					&.sale { color: $sale; }
+				}
+				& .inv-address {
+					padding-bottom: 5px;
+					border-bottom: 2px solid $gray;
+				}
+			}
+
+			& .inv-location {
+				display: flex;
+				justify-content: space-around;
+				padding: 5px 0 10px 0;
+				font-size: .9rem;
+				background: lighten($black, 5%);
+			}
+
+			& .inv-orig-price {
+				font-size: .9rem;
+			}
+
+			& .inv-line-2 {
+				margin-top: 10px;
+				display: flex;
+				justify-content: space-between;
+				& .inv-dom {
+					// margin-right: 20px;
+				}
+			}
+
+			& .inv-line-3 {
+				display: flex;
+				justify-content: space-between;
+				font-size: .9rem;
+				& .inv-sale-date {
+					margin-right: 20px;
+				}
+			}
+
+			& .inv-beds {
+				margin-top: 10px;
+			}
+
+			& .inv-sqft {
+				margin-top: 10px;
+			}
+
+			& .inv-garage {
+				margin-top: 10px;
+			}
+		}
+
+		& .inventory-actions {
+			width: 25%;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			margin: 20px 0 20px 20px;
+
+			& .inv-button-container {
+				margin-top: 7%;
+				height: 100px;
+				width: 300px;
+				display: flex;
+				flex-flow: row wrap;
+				text-align: center;
+
+				& button {
+					height: 50px;
+					width: 25%;
+					display: block;
+					cursor: pointer;
+					outline: none;
+					color: white;
+					font-family: 'Lato';
+					font-size: 1.1rem;
+					border: 1px solid $gray;
+					background: lighten($black, 5%);
+					@include transition($transition-speed);
+
+					&.inv-details-button {
+						display: block;
+						width: 100%;
+					}
+
+					&:hover,:focus {
+						background: $primary;
+					}
+				}
+			}
+
+			& .ho-comment-title {
+				color: $primary-light;
+				margin: 50px 0 10px 0;	
+			}
+
+			& .ho-comment {
+				height: 20%;
+				width: 100%;
+				background: $offwhite;
+				&:hover {
+					background: $primary-light;
+				}
+			}
+
+			& button {
+				height: 10%;
+				width: 60%;
+				margin-top: 10px;
+				border: none;
+				outline: none;
+				font-family: 'Lato';
+				font-size: 1.2rem;
+				cursor: pointer;
+				color: white;
+				background: $primary;
+				@include transition($transition-speed);
+
+				&:hover,:focus {
+					background: $primary-dark;
+				}
+			}
+		}
+
+	}
+}
+
+.property-details-document {
+	height: 90%;
+	position: relative;
+	overflow-y: auto;
+	&::-webkit-scrollbar { display: none; }
+
+	& .contract-button {
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		z-index: 1;
+		color: white;
+		background: $primary;
+		cursor: pointer;
+		border: none;
+		@include transition($transition-speed);
+		&:hover,:focus { background: $primary-dark; }
+	}
+
+	& .pdd-section-title {
+		width: 100%;
+		margin: 10px 0 5px 0;
+		padding-bottom: 5px;
+		position: relative;
+
+		font-size: 1.3rem;
+		text-align: left;
+		border-bottom-width: 3px;
+		border-bottom-style: solid;
+
+		&::after {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			border-width: 8px;
+			border-style: solid;
+			border-left-color: transparent;
+			border-top-color: transparent;
+		}
+
+		&.core { @include pdd-title-accent(black); }
+		&.remarks { @include pdd-title-accent($primary-dark); }
+		&.amenities { @include pdd-title-accent(red); }
+		&.features { @include pdd-title-accent(green); }
+		&.other { @include pdd-title-accent(purple); }
+	}
+
+	& .pdd-section {
+		text-align: center;
+
+		& .pdd-row {
+			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	& .pdd-section-core {
+		& .pdd-address {
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+			background: $light-gray;
+		}
+	}
+
+	& .pdd-remarks-data {
+		width: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		font-size: 1.1rem;
+
+		& strong { font-weight: 700; }
+		& .collection-remarks {
+			padding: 5px 10px;
+			margin-bottom: 10px;
+		}
+		& .mls-area-num { font-size: .7rem; }
+	}
+
+	& .collection-row {
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin-bottom: 10px;
+
+		&.highlight {
+			padding: 5px 0;
+			width: auto;
+			background: rgba(212, 212, 212, .9);
+			& span { margin: 0 10px; }
+		}
+		&.one { width: 50%;}
+	}
+}
+
+#collection-channel .property-details-document {
+	margin-top: 20px;
+	padding: 20px 125px 100px 125px;
+}
+
+#inventory .property-details-document {
+	height: 500px;
+	padding: 20px 125px 100px 125px;
+	display: none;
+
+	// color: white;
+	// background: $black;
+	border-right: 50px solid darken($black, 5%);
+	border-left: 50px solid darken($black, 5%);
+	@include box-shadow(0, 0, 30px, $gray, true);
+}
+
+
+
+
+.listing-color { color: $listing; }
+.pending-color { color: $pending; }
+.sold-color { color: $sale; }
+
+@media screen and (max-width : 1160px) {	// ratio = .82
+	.inventory-selection {
+		flex-flow: column nowrap;
+		align-items: center;
+		& div { width: 100%; }
+	}
+}

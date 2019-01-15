@@ -1,0 +1,369 @@
+<!-- Homeowner Market Insight
+  -- Author: bhuelga
+  -->
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+	  <title>Homeowner's Market Insight</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
+
+	  <!-- build:css css/main.min.css -->
+	  <link rel="stylesheet" type="text/css" href="css/navs.css">
+	  <link rel="stylesheet" type="text/css" href="css/my-homeowner-page.css">
+	  <!-- endbuild -->
+	  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+	  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	</head>
+
+	<body>
+
+		<main>
+
+			<div id="main-content">
+
+				<!--    TOP BAR    -->
+				<div id="top-bar" class="expanded">
+					<div id="top-main">
+						<img class="agent-logo" src="../../images/templates/logo.PNG" alt="Agent Logo">
+						<div id="welcome">
+							<div>
+								<span>Welcome!</span>
+								<span class="insert-homeowner-names"></span>
+							</div>
+							<div class="ho-market-insight">Homeowner's Market Insight ™</div>
+						</div>
+						<img class="brokerage-logo" src="../../images/templates/sothebys.png" alt="Sothebys">
+					</div>
+					<div id="top-expanded">
+						<div class="insert-current-date"></div>
+						<div>
+							<strong>
+								Thank you for visiting my <i>Homeowner's Market Insight</i> ™ website.
+							</strong>
+						</div>
+						<p>
+							My team and I have worked hard to design this website so it will provide you
+							with the best resource for market information for the city of 
+							<span class="insert-current-city"></span> and your neighborhood of
+							<span class="insert-current-mls-area"></span> - and even all of the other cities on
+							the Peninsula.
+						</p>
+						<div class="ho-options-list">
+							<p>
+								<strong>
+									Here are just a few highlights of what's in store for you here:
+								</strong>
+							</p>
+							<ul>
+								<li>Ask me questions or comment directly with me regarding any property.</li>
+								<li>
+									Create custom property searches that can include active listings or solds.
+								</li>
+								<li>
+									Build your own property updates that are emailed to you automatically.
+								</li>
+								<li>
+									View my most recent <i>Precision Market Analyses</i> about your neighborhood.
+								</li>
+								<li>And of course, view my collection of fine homes.</li>
+							</ul>
+							<p class="closer">
+								And there's a whole lot more you can do, too! Please feel free to explore and
+								experiment with creating new searches or discover new market analytics. <br><br><br>
+								<strong>This is <i>your</i> &nbsp;website. Come back often!</strong>
+							</p>
+							<div class="insert-agent-name"></div>
+							<div id="click-anywhere">Click anywhere to continue</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div id="main-container">
+
+					<!--    CHANNEL MENU    -->
+					<div id="channel-menu">
+
+						<ul>
+							<li  id="collection-nav" class="nav-channel active"><span class="insert-agent-first-name"></span>'s Collection</li>
+							<li id="neighborhood-nav" class="nav-channel">My Neighborhood</li>
+						</ul>
+
+						<ul>
+							<li id="activity-nav" class="nav-channel">Market Activity</li>
+							<li id="pma-nav" class="nav-channel">Precision Market Analysis</li>
+							<li id="search-nav" class="nav-channel">Property Search</li>
+						</ul>
+
+						<ul>
+							<li id="account-nav" class="nav-channel">My Account</li>
+							<li id="favorite-nav" class="nav-channel">My Favorites</li>
+							<li id="email-nav" class="nav-channel">My Automatic Emails</li>
+						</ul>
+
+						<ul>
+							<li id="smart-nav" class="nav-channel">Smart Marketing</li>
+							<li id="real-estate-nav" class="nav-channel">Real Estate News</li>
+						</ul>
+
+						<button id="homewatch-secton-nav" class="section-nav">HOMEWATCH VIEW</button>
+						<button id="details-section-nav" class="section-nav">DETAILS VIEW</button>
+					</div>
+
+
+					<!--    MAIN TV    -->
+					<div id="tv-container" class="expandable">
+
+						<button id="contract-button"><i class="material-icons">fullscreen_exit</i></button>
+						<div id="tv" class="collection">
+
+							<div id="collection-channel" class="tv-channel">
+								<div id="collection-list">
+									
+								</div>
+								<!-- <div class="paddle left hidden"></div>
+								<div class="paddle right"></div> -->
+							</div>
+
+							<div id="activity-channel" class="tv-channel">	
+							</div>
+
+							<div id="pma-channel" class="tv-channel">
+								<div id="pma-mq-out" class="pma-page active">
+									<div class="carousel-arrow carousel-arrow-left">
+										<i class="material-icons">chevron_left</i>
+									</div>
+									<img src="../images/pma-mq-out.png">
+									
+								</div>
+								<div id="pma-mq-in" class="pma-page">
+									
+									<img src="../images/pma-mq-in.png">
+									<div class="carousel-arrow carousel-arrow-right">
+										<i class="material-icons">chevron_right</i>
+									</div>
+								</div>
+								<div id="pma-q-in" class="pma-page">
+									<div class="carousel-arrow carousel-arrow-left">
+										<i class="material-icons">chevron_left</i>
+									</div>
+									<img src="../images/pma-q-out.png">
+									<div class="carousel-arrow carousel-arrow-right">
+										<i class="material-icons">chevron_right</i>
+									</div>
+								</div>
+								<div id="pma-q-out" class="pma-page">
+									<div class="carousel-arrow carousel-arrow-left">
+										<i class="material-icons">chevron_left</i>
+									</div>
+									<img src="../images/pma-q-in.png">
+									<div class="carousel-arrow carousel-arrow-right">
+										<i class="material-icons">chevron_right</i>
+									</div>
+								</div>
+							</div>
+
+							<div id="favorite-channel" class="tv-channel">
+								<div class="property-search-input">
+									<div class="ps-row">
+										<div class="ps-col">
+											<div>City</div>
+											<input type="text" placeholder="Carmel Highlands">
+										</div>
+										<div class="ps-col">
+											<div>Min. Price</div>
+											<input type="text" placeholder="$1,000,000">
+										</div>
+										<div class="ps-col">
+											<div>Max. Price</div>
+											<input type="text" placeholder="$4,000,000">
+										</div>
+									</div>
+									<div class="ps-row">
+										<div class="ps-col">
+											<div>Min. Beds</div>
+											<input type="text" placeholder="Any">
+										</div>
+										<div class="ps-col">
+											<div>Min. Baths</div>
+											<input type="text" placeholder="Any">
+										</div>
+									</div>
+									<div class="ps-row">
+										<div class="ps-col">
+											<button>Search</button>
+										</div>
+									</div>
+									<div id="advanced-message" class="ps-row">
+										<div class="ps-col">
+											Expand for Advanced Search
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div id="email-channel" class="tv-channel">
+								<div id="favorite-search-input">
+									<div id="fs-title">
+										<span>My Favorite Searches</span>
+									</div>
+									<div id="fs-list">
+										<div class="fs-selection">
+											<span>Carmel Woods</span> 
+											<span>|</span> 
+											<span>$1mil-$1.5mil</span>
+											<span>|</span>
+											<span>3 Beds</span>
+											<button><i class="material-icons">search</i></button>
+										</div>
+										<div class="fs-selection">
+											<span>Northwest Pebble Beach</span> 
+											<span>|</span> 
+											<span>$4mil+</span>
+											<span>|</span>
+											<span>4 Beds</span>
+											<span>|</span>
+											<span>3 Baths</span>
+											<button><i class="material-icons">search</i></button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div id="smart-channel" class="tv-channel">
+								<div id="pu-input">
+									<div id="pu-title">
+										My Automatic Property Emails
+									</div>
+									<div id="pu-message">
+										You are currently not receiving any property updates.<br>
+										Click below to get started!
+									</div>
+									<button>Start</button>
+								</div>
+							</div>
+
+						</div>
+						<div id="collection-home-photos">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+							<img src="../../images/pma-creator/las/2715RiberaRd.jpg">
+						</div>
+					</div>
+
+
+
+					<div id="agent-info">
+						<div>
+							<div id="agent-photo"></div>
+							<div id="agent-name"></div>
+							<div id="agent-title"></div>
+							<div id="agent-dre"></div>
+							<div id="agent-phone-number"></div>
+							<div id="agent-email"></div>
+							<div id="agent-accolades"></div>
+							<div id="social-media">
+								<a id="facebook-link" href = '#' target="_blank" ><img src="/images/social/facebook.svg"></a>
+								<a id="twitter-link" href = '#' target="_blank" ><img src="/images/social/twitter.svg"></a>
+								<a id="linkedin-link" href = '#' target="_blank" ><img src="/images/social/linkedin.svg"></a>
+								<a id="instagram-link" href = '#' target="_blank" ><img src="/images/social/instagram.svg"></a>
+								<a id="googleplus-link" href = '#' target="_blank" ><img src="/images/social/googleplus.svg"></a>
+							</div>
+						</div>
+						<button id="about-button">ABOUT <span class="insert-agent-first-name"></span></button>
+						<button id="contact-button">CONTACT <span class="insert-agent-first-name"></span></button>
+						<div id="joke-tv" class="easter-egg">A SENSE OF HUMOR</div>
+						<div id="homewatch-tv" class="easter-egg">HOMEWATCH TV ™</div>
+					</div>
+				</div>
+
+
+				<!--    INVENTORY    -->
+
+				<div id="inventory">
+
+					<!-- <div id="sort-container">
+						<div>Your Current Search is:&nbsp;&nbsp;&nbsp;&nbsp;Carmel-by-the-Sea</div>
+						<div class="button-container">
+							<button>Status</button>
+							<button>City</button>
+							<button>Neighbor-<br>hood</button>
+							<button>Price Ascending</button>
+							<button>Price Descending</button>
+							<button>Square Footage</button>
+							<button>Bedrooms</button>
+							<button>Bathrooms</button>
+							<button>Street Address</button>
+							<button>View</button>
+							<button>Pool</button>
+						</div>
+					</div> -->
+
+					<div id="no-results">
+						No Search Results...
+					</div>
+				</div>
+
+			</div>
+
+
+			<nav id="bottom-nav-bar">
+				<div class="nav-column">
+					<div id="copyright">
+						2018-19 © ListGen. All Rights Reserved
+					</div>
+				</div>
+				<div class="nav-column">
+					<div id="bottom-nav-links">
+						<a class="about-us" href="./about-us.html">About&nbsp;Us</a>
+						<a id="terms-of-service" href="./terms-of-service.html">Terms&nbsp;of&nbsp;Service</a>
+						<a id="privacy-policy" href="./privacy-policy.html">Privacy&nbsp;Policy</a>
+					</div>
+				</div>
+			</nav>
+
+		</main>
+
+		<!-- EXTRAS -->
+
+		<div id="modal-overlay" class="overlay"></div>
+		<div id="top-bar-overlay" class="overlay low"></div>
+
+		<div id="contact-modal" class="modal">
+			<div class="modal-header">
+				Contact Kyle
+			</div>
+			<div class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+
+
+	<!-- JQuery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<!-- build:js js/main.min.js -->
+	<script src="js/plugins/transit.js" defer="defer"></script>
+	<script src="js/homeowner-site/util.js" defer="defer"></script>
+	<script src="js/homeowner-site/homeowner-site.js" defer="defer"></script>
+	<script src="js/homeowner-site/homeowner-television.js" defer="defer"></script>
+	<script src="js/homeowner-site/pma-channel.js" defer="defer"></script>
+	<script src="js/homeowner-site/collection-channel.js" defer="defer"></script>
+	<script src="js/homeowner-site/inventory-area.js" defer="defer"></script>
+	<!-- endbuild -->
+	</body>
+</html>
